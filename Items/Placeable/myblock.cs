@@ -19,7 +19,8 @@ namespace TestMod.Items.Placeable
             item.useTurn = true;
             item.autoReuse = true;
             item.useAnimation = 15;
-            item.useStyle = 15;
+            item.useTime = 10;
+            item.useStyle = ItemUseStyleID.SwingThrow;
             item.consumable = true;
             item.createTile = mod.TileType("TileViola");
         }
@@ -27,8 +28,8 @@ namespace TestMod.Items.Placeable
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.DirtBlock, 10);
-            recipe.SetResult(this);
+            recipe.AddIngredient(ItemID.DirtBlock, 1);
+            recipe.SetResult(this, 10);
             recipe.AddRecipe();
         }
     }

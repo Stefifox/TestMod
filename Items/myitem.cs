@@ -33,6 +33,7 @@ namespace TestMod.Items
             item.rare = 2;
             item.UseSound = SoundID.Item1;
             item.autoReuse = true;
+            item.crit = 90;
         }
 
         /*
@@ -53,6 +54,9 @@ namespace TestMod.Items
         */
         public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
         {
+            int[] lista = {BuffID.Gravitation, BuffID.HeartLamp};
+            int lunghezza = lista.Length;
+
             if(crit){
                 target.AddBuff(BuffID.Gravitation, 5 * 60);
             }else{
@@ -60,6 +64,5 @@ namespace TestMod.Items
             }
             
         }
-
     }
 }
