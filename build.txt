@@ -1,0 +1,3 @@
+displayName = My Test Mod
+author = Volpotto
+version = 0.1
