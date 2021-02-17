@@ -13,7 +13,7 @@ namespace TestMod.Tiles
             Main.tileBlockLight[Type] = false;
             Main.tileLighted[Type] = false;
         
-            drop = mod.ItemType("myblock");
+            drop = mod.ItemType("purpleblock");
             AddMapEntry(new Color(444, 222, 435));
         }
     }

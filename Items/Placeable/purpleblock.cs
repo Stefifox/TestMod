@@ -3,12 +3,12 @@ using Terraria.ModLoader;
 
 namespace TestMod.Items.Placeable
 {
-    public class myblock : ModItem
+    public class purpleblock : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Un blocco viola");
-            Tooltip.SetDefault("Sono un blocco viola");
+            DisplayName.SetDefault("Purple Block");
+            Tooltip.SetDefault("I'm a purple block");
         }
 
         public override void SetDefaults()
@@ -22,14 +22,15 @@ namespace TestMod.Items.Placeable
             item.useTime = 10;
             item.useStyle = ItemUseStyleID.SwingThrow;
             item.consumable = true;
-            item.createTile = mod.TileType("TileViola");
+            item.createTile = mod.TileType("purpletiles");
         }
 
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.DirtBlock, 1);
-            recipe.SetResult(this, 10);
+            recipe.AddIngredient(ItemID.StoneBlock, 1);
+            recipe.SetResult(this, 15);
             recipe.AddRecipe();
         }
     }

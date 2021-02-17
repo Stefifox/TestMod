@@ -1,10 +1,10 @@
-﻿using Terraria;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace TestMod.Items
 {
-    public class myitem : ModItem
+    public class usword : ModItem
     {
 
         /*
@@ -12,8 +12,8 @@ namespace TestMod.Items
         */
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Woow Esisto?");
-            Tooltip.SetDefault("Sono un item inutile, forse faccio volare via la gente");
+            DisplayName.SetDefault("Usless");
+            Tooltip.SetDefault("I'm an usless sword ");
         }
 
         /*
@@ -42,9 +42,9 @@ namespace TestMod.Items
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.DirtBlock, 10);
+            recipe.AddIngredient(ItemID.IronBar, 5);
             recipe.AddIngredient(ItemID.Wood, 5);
-            //recipe.AddTile(TileID.WorkBenches);
+            recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }
@@ -54,15 +54,15 @@ namespace TestMod.Items
         */
         public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
         {
-            int[] lista = {BuffID.Gravitation, BuffID.HeartLamp};
-            int lunghezza = lista.Length;
-
-            if(crit){
+            if (crit)
+            {
                 target.AddBuff(BuffID.Gravitation, 5 * 60);
-            }else{
-                player.AddBuff(BuffID.Gravitation, 5* 60);
             }
-            
+            else
+            {
+                player.AddBuff(BuffID.Gravitation, 5 * 60);
+            }
+
         }
     }
 }
