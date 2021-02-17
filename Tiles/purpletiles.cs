@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace TestMod.Tiles
 {
-    public class TileViola : ModTile
+    public class purpletiles : ModTile
     {
         public override void SetDefaults()
         {
